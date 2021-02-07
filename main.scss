@@ -1,0 +1,77 @@
+
+// // Extends
+
+// // Codigo que necesito repetir a lo largo de distintos elementos,
+// // que pueden no tener nada que ver entre si
+// Es una manera de declarar variables q va a tener muchos valores a la vez
+// se señala con %
+
+
+%centrar-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+%separar-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+%espaciado-secciones {
+    margin: 20px;
+    padding: 50px;
+}
+
+div {
+    @extend %centrar-flex;
+}
+  
+section {
+    @extend %espaciado-secciones;
+    @extend %separar-flex;
+    background-color: red;
+}
+  
+button {
+    @extend %centrar-flex;
+}
+
+
+
+
+
+
+// MIXINS 
+// Codigo compartido entre 
+// distintas versiones de un solo componente. Mixins pueden aceptar parametros porque se comparte
+// entre distintas versiones de un solo componente.
+
+$color-principal: red;
+$color-secundario: blue;
+$color-deshabilitado: gray;
+
+@mixin boton($color-de-fondo, $color-de-texto) { //parametro
+  height: 200px;
+  width: 400px;
+  background-color: $color-de-fondo;
+  color: $color-de-texto;
+  @extend %centrar-flex;
+}
+
+.boton-principal {
+  @include boton($color-principal, black);
+}
+
+.boton-secundario {
+ @include boton($color-secundario, white);  // parametro
+}
+
+.boton-deshabilitado {
+  @include boton($color-deshabilitado, darkgray);
+}
+
+
+// puedo combinar mixins con extends, para extendsm se separan con coma, para mixins,
+// se crea un codigo separado para cada cosa

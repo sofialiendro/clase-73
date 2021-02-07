@@ -1,0 +1,43 @@
+.boton-deshabilitado, .boton-secundario, .boton-principal, button, div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+section {
+  margin: 20px;
+  padding: 50px;
+}
+
+section {
+  background-color: red;
+}
+
+.boton-principal {
+  height: 200px;
+  width: 400px;
+  background-color: red;
+  color: black;
+}
+
+.boton-secundario {
+  height: 200px;
+  width: 400px;
+  background-color: blue;
+  color: white;
+}
+
+.boton-deshabilitado {
+  height: 200px;
+  width: 400px;
+  background-color: gray;
+  color: darkgray;
+}
+
+/*# sourceMappingURL=style.css.map */
